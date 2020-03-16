@@ -19,11 +19,9 @@ Clasification and clustering for machine learning in python
 
 # Result - Screen Shot App
 
-# Link Task
-https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/task_ml.pdf
-
-# Link Report
-comming soon
+# Documentation
+- Link task - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/task_ml.pdf
+- Link dataset (Air BnB) -  https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/air_bnb.csv
 
 # Attention !!!
 Please enjoy and don't forget fork and give a star
