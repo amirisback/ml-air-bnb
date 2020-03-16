@@ -1,13 +1,15 @@
 # Mini Machine Learning Air BnB By Amirisback
-Clasification and clustering for machine learning in python
+Clasification and clustering
 
-# University
-- Telkom University
-- Informatics 2019
+# Watermark
+- Muhammad Faisal Amir
+- 1301198497
 - IFX - 43 - GAB
+- Informatics 2019
+- Telkom University
 
 # About This Project
-- Membuat program sederhana yang berfungsi agar server dapat memberikan informasi kepada client/pengguna aplikasi terkait versioning/informasi update aplikasi. Apabila client melakukan update ,	maka aplikasi di client akan berubah sesuai update-nya.
+- Clasification and clustering for machine learning in python, using Air BnB dataset
 
 # TODO
 - Formulasi Masalah : mengacu pada 4 tahap From Problem to ML Solution  
