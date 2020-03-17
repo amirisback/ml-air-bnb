@@ -14,8 +14,5 @@
 # FrogoBox Software Industries
 # 
 # /
-
-
-import pandas as pd
-
-data = pd.read_csv("raw/air_bnb.csv", delimiter=',')
+ 
+ 
