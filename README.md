@@ -23,6 +23,7 @@ Clasification and clustering
 
 # Documentation
 - Link task - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/task_ml.pdf
+- Link report - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/docs/report.docx
 - Link dataset (Air BnB) -  https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/air_bnb.csv
 
 # Attention !!!
