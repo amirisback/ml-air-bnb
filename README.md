@@ -15,7 +15,7 @@ Clasification and Clustering
 - Python (SDK) - https://www.python.org/downloads/
 - PyCharm JetBrain Community (IDE) - https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC
 - Git (Windows) - https://git-scm.com/download/win 
-- Scratch - https://downloads.scratch.mit.edu/desktop/Scratch%20Desktop%20Setup%203.9.0.exe
+- Scratch (Windows) - https://downloads.scratch.mit.edu/desktop/Scratch%20Desktop%20Setup%203.9.0.exe
 
 # TODO
 - Terdapat 3 buah dataset, setiap mahasiswa  diberikan 1 buah  dataset sesuai table di bagian akhir deskripsi ini.  Mahasiswa dibebaskan untuk memilih feature dan label yang akan digunakan.  
@@ -43,6 +43,23 @@ Untuk setiap task, mahasiswa diharapkan setidaknya melakukan hal- hal berikut :
 - Link task - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/task_ml.pdf
 - Link report - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/docs/report.docx
 - Link dataset (Air BnB) -  https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/air_bnb.csv
+
+# Colaborator
+Very open to anyone, I'll write your name under this, please contribute by sending an email to me
+
+- Mail To faisalamircs@gmail.com
+- Subject : Github _ [Github-Username-Account] _ [Language] _ [Repository-Name]
+- Example : Github_amirisback_kotlin_admob-helper-implementation
+
+Name Of Contribute
+- Muhammad Faisal Amir
+- Waiting List
+- Waiting List
+
+Waiting for your contribute
+
+# Reference
+- w3school.com - https://www.w3schools.com/python
 
 # Attention !!!
 Please enjoy and don't forget fork and give a star
