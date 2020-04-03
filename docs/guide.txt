@@ -1,0 +1,71 @@
+======================
+A. FORMULASI
+
+1. 
+ - Tulis yang pengen dibuat dari data yang dikasih dengan pendekatan machine learning
+  -- Contoh: Prediksi rekomendasi kosan air bnb
+ - 
+
+2. 
+ - Kemungkinan ada berapa label pada data yang akan di prediksi
+ - Dari fitur/attribute mana prediksi akan dibuat
+ - ..
+
+
+3. SKIP
+
+
+4.
+ - Tulis potensi fitur-fitur yang kemungkinan menjadi bias dan terpengaruhi oleh etika manusia
+ - Contoh:
+   -- Misal di tugas air_bnb kalau ada negara yang gk boleh ada perempuannya berarti masukin ke tahap ini
+
+==========
+B. EKSPLORASI DAN PERSIAPAN DATA
+ - Cari teknik pada ppt (ML 02 02 Data Preparation.pptx) untuk melakukan splitting, cleansing, dan eksplorasi data
+  - Contoh : 
+    -- Cari outliers pada fitur-fitur dataset dengan boxplot (Slide 14)
+    -- Scaling value suatu fitur data (misal ada data yang range nya terlalu jauh [0.0001 - 100000] harus discaling) (Slide 37 - 47)
+    -- Distribusi data di cek
+    -- Korelasi pada 2 fitur yang mungkin bersangkutan dengan Correlation Formula (Slide 20-23)
+    -- Binning (Grouping suatu fitur/attribute data [Contoh: ada dislide 47])
+    -- Feature Creation (tambah fitur/attribute yang belum terlihat [dari korelasi suatu data misalnya])
+  - Data cleansing ()
+  - Data splitting
+    -- Split data ke 3 ===> 
+     --- Train: Untuk proses training model machine learning
+     --- Validation: Proses setelah training untuk di validasi menggunakan data ini
+     --- Test: Hasil model akan di testing oleh data ini
+
+
+=============
+C. PEMODELAN
+ - Cari library pemodelan aja bebas make yang mana aja
+ -- URL : https://towardsdatascience.com/the-beginners-guide-to-selecting-machine-learning-predictive-models-in-python-f2eb594e4ddc
+
+
+
+===========
+D. EKSPERIMEN
+ - nyambung dengan yang step C, download librarynya lebih dari satu, yang terbaik
+ - atau misalnya step B nya berbeda cara (Data cleansing, Preparation Data, dll)
+
+
+========
+E. EVALUASI
+  - cek hasilnya make Confusion Matrix (Slide 6 - 21) 
+  - terus masukin ke confusion matrix bandingin untuk pilih model-model yang dipilih di step EKSPERIMEN dan PEMODELAN
+
+========
+F. KESIMPULAN 
+  - baca sendiri di pdf
+
+===========================================================================================
+===========================================================================================
+CLUSTERING
+ - ...
+
+ - Contoh k-means python: https://medium.com/machine-learning-algorithms-from-scratch/k-means-clustering-from-scratch-in-python-1675d38eee42
+
+
+ - Contoh kalau mau gali-gali codingan di github : https://github.com/scikit-learn/scikit-learn/tree/master/sklearn/cluster (Complete semua clustering ada tinggal copas + reskin)
