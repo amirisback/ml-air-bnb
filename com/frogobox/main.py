@@ -27,21 +27,22 @@ data = pd.read_csv("raw/air_bnb.csv", delimiter=',')
 # --- Menghilangkan Kolom Yang Tidak Perlu ---
 # simpleData = data.drop([id,name,host_id,host_name,neighbourhood_group,neighbourhood,latitude,longitude,room_type,price,minimum_nights,number_of_reviews,last_review,reviews_per_month,calculated_host_listings_count,availability_365])
 data = data.drop(
-    ["id", "host_id", "host_name", "neighbourhood_group", "neighbourhood", "latitude", "longitude", "room_type",
+    ["host_id", "host_name", "neighbourhood_group", "neighbourhood", "latitude", "longitude",
      "minimum_nights", "number_of_reviews", "last_review", "reviews_per_month", "calculated_host_listings_count",
-     "availability_365"]
-)
+     "availability_365"], axis=1)
 data.head()
+print(data)
 
 # -- Menentukan variabel yang akan di klusterkan ---
 data_x = data.iloc[:, 1:3]
 data_x.head()
+print(data_x)
 
-# --- Memvisualkan persebaran data ---
-plt.scatter(data.name, data.price, s=10, c="c", marker="o", alpha=1)
+# --- Memvisualkan persebaran simpleData ---
+plt.scatter(data.name, data.price, 10, "c", "o", 1)
 plt.show()
 
-# --- Mengubah Variabel Data Frame Menjadi Array ---
+# --- Mengubah Variabel simpleData Frame Menjadi Array ---
 x_array = np.array(data_x)
 print(x_array)
 
