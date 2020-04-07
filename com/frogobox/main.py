@@ -39,7 +39,7 @@ data_x.head()
 print(data_x)
 
 # --- Memvisualkan persebaran simpleData ---
-plt.scatter(data.name, data.price, 10, "c", "o", 1)
+plt.scatter(data.name, data.room_type, 10, "c", "o", 1)
 plt.show()
 
 # --- Mengubah Variabel simpleData Frame Menjadi Array ---
