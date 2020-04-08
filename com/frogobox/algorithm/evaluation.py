@@ -18,7 +18,7 @@
 from sklearn.metrics import classification_report, confusion_matrix
 
 
-def evaluation(y_test, y_pred):
+def evaluation(y_test, y_prediction):
     # evaluasi
-    print(confusion_matrix(y_test, y_pred))
-    print(classification_report(y_test, y_pred))
+    print(confusion_matrix(y_test, y_prediction))
+    print(classification_report(y_test, y_prediction))

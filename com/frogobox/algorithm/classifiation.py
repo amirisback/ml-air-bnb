@@ -25,21 +25,21 @@ from com.frogobox.base.config import *
 
 
 def create_result_classification(data_test, y_prediction):
-    item_price = []
-    item_minimum_nights = []
-    item_number_of_reviews = []
-    item_availability_365 = []
+    item_column_0 = []
+    item_column_1 = []
+    item_column_2 = []
+    item_column_3 = []
 
     for column in data_test:
-        item_price.append(column[0])
-        item_minimum_nights.append(column[1])
-        item_number_of_reviews.append(column[2])
-        item_availability_365.append(column[3])
+        item_column_0.append(column[0])
+        item_column_1.append(column[1])
+        item_column_2.append(column[2])
+        item_column_3.append(column[3])
 
     data_frame = pd.DataFrame(
-        {DATA_SET_PRICE: item_price, DATA_SET_MINIMUM_NIGHTS: item_minimum_nights,
-         DATA_SET_NUMBER_OF_REVIEWS: item_number_of_reviews,
-         DATA_SET_AVAILABILITY_365: item_availability_365, DATA_SET_CLASS: y_prediction})
+        {COLUMN_PRICE: item_column_0, COLUMN_MINIMUM_NIGHTS: item_column_1,
+         COLUMN_NUMBER_OF_REVIEWS: item_column_2,
+         COLUMN_AVAILABILITY_365: item_column_3, COLUMN_CLASS: y_prediction})
 
     data_frame.to_csv(FILE_NAME_RESULT_CLASSIFICATION, index=False)
 
