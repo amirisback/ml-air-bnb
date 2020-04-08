@@ -15,14 +15,10 @@
 # 
 # /
 
-from com.frogobox.algorithm.classifiation import classification
-from com.frogobox.algorithm.clustering import clustering
+from sklearn.metrics import classification_report, confusion_matrix
 
 
-def main():
-    clustering()
-    classification()
-
-
-if __name__ == "__main__":
-    main()
+def evaluation(y_test, y_pred):
+    # evaluasi
+    print(confusion_matrix(y_test, y_pred))
+    print(classification_report(y_test, y_pred))
