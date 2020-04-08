@@ -15,14 +15,16 @@
 # 
 # /
 import pandas as pd
+from pandas import DataFrame
+
 from com.frogobox.base.config import *
 
 from com.frogobox.base.config import FILE_NAME_RESULT_CLUSTERING
 from com.frogobox.algorithm.kmeans import Kmeans
-from com.frogobox.base.helper import get_value_type, print_border_line
+from com.frogobox.base.helper import cast_to_int, print_border_line
 
 
-def create_result_clustering(column_label, kmeans):
+def create_result_clustering(column_label, kmeans, save_path_file):
     item_column_0 = []
     item_column_1 = []
     item_column_2 = []
@@ -31,10 +33,10 @@ def create_result_clustering(column_label, kmeans):
 
     for classification in kmeans.classes:
         for column in kmeans.classes[classification]:
-            item_column_0.append(get_value_type(column[0]))
-            item_column_1.append(get_value_type(column[1]))
-            item_column_2.append(get_value_type(column[2]))
-            item_column_3.append(get_value_type(column[3]))
+            item_column_0.append(cast_to_int(column[0]))
+            item_column_1.append(cast_to_int(column[1]))
+            item_column_2.append(cast_to_int(column[2]))
+            item_column_3.append(cast_to_int(column[3]))
             label = classification + 1
             labels.append(COLUMN_CLASS + "_" + str(label))
 
@@ -45,19 +47,19 @@ def create_result_clustering(column_label, kmeans):
                                           COLUMN_CLASS: labels})
 
     print_border_line()
-    print("Result Clustering : " + FILE_NAME_RESULT_CLUSTERING)
+    print("Result Clustering : " + save_path_file)
     print_border_line()
     print(clustering_data_frame)
     print()
 
     # Create clustering result cs
-    clustering_data_frame.to_csv(FILE_NAME_RESULT_CLUSTERING, index=False)
+    clustering_data_frame.to_csv(save_path_file, index=False)
 
 
-def clustering(path_file_raw_dataset, column_label):
+def clustering(path_file_raw_dataset, column_label, save_path_file):
     fetch_raw_data = pd.read_csv(path_file_raw_dataset)
     sorted_raw_data = fetch_raw_data[column_label]
-    numpy_array = sorted_raw_data.values  # kembalikan numpy array
+    numpy_array = sorted_raw_data.values
     kmeans = Kmeans(2)
     kmeans.fit(numpy_array)
-    create_result_clustering(column_label, kmeans)
+    create_result_clustering(column_label, kmeans, save_path_file)
