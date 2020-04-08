@@ -17,6 +17,8 @@
 
 import numpy as np
 
+np.seterr(divide='ignore', invalid='ignore')
+
 class Kmeans:
     def __init__(self, k=3, tolerance=0.0001, max_iterations=500):
         self.k = k
