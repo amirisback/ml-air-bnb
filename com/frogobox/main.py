@@ -15,7 +15,7 @@
 # 
 # /
 import random
-from com.frogobox.algorithm.classifiation import classification
+from com.frogobox.algorithm.classification import classification
 from com.frogobox.algorithm.clustering import clustering
 from com.frogobox.base.config import *
 from com.frogobox.base.helper import print_border_line, get_list_column_length, random_number
