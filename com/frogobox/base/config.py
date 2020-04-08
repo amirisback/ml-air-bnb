@@ -16,9 +16,14 @@
 # /
 
 # Path file data
+from datetime import datetime
+
+FORMAT_DATE = "%Y-%m-%d"
+DATE_TODAY = str(datetime.today().strftime(FORMAT_DATE))
+
 FILE_NAME_RAW_DATA_SET = "raw/air_bnb.csv"
-FILE_NAME_RESULT_CLUSTERING = "result/clustering-kmeans.csv"
-FILE_NAME_RESULT_CLASSIFICATION = "result/classificaction-knn.csv"
+FILE_NAME_RESULT_CLUSTERING = "result/" + DATE_TODAY + "-airbnb-clustering-kmeans.csv"
+FILE_NAME_RESULT_CLASSIFICATION = "result/" + DATE_TODAY + "-airbnb-classificaction-knn.csv"
 
 # Title column table dataset
 COLUMN_ID = "id"

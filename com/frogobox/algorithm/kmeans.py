@@ -17,7 +17,6 @@
 
 import numpy as np
 
-
 np.seterr(divide='ignore', invalid='ignore')
 
 
@@ -31,17 +30,17 @@ class Kmeans:
 
         self.centroids = {}
 
-        # inisialasi centroid
+        # Initiation Centroid
         for i in range(self.k):
             self.centroids[i] = data[i]
 
-        # Mulai Iterasi
+        # Do Iterations
         for i in range(self.max_iterations):
             self.classes = {}
             for i in range(self.k):
                 self.classes[i] = []
 
-            # Remukan jarak terdekat dengan centroid lalu pilih
+            # Find the closest distance to the centroid then select
             for features in data:
                 distances = [np.linalg.norm(features - self.centroids[centroid]) for centroid in self.centroids]
                 classification = distances.index(min(distances))
@@ -49,7 +48,7 @@ class Kmeans:
 
             previous = dict(self.centroids)
 
-            # rata-rata datapoints cluster untuk menghitung ulang centroid
+            # Average cluster data points to recalculate centroids
             for classification in self.classes:
                 self.centroids[classification] = np.average(self.classes[classification], axis=0)
 
@@ -63,7 +62,7 @@ class Kmeans:
                 if np.sum((curr - original_centroid) / original_centroid * 100.0) > self.tolerance:
                     isOptimal = False
 
-            # Hentikan looping jika tida terjadi perubuhan centroid
+            # Stop looping if there is no centroid change
             if isOptimal:
                 break
 
