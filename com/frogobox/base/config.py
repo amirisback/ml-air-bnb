@@ -18,12 +18,20 @@
 # Path file data
 from datetime import datetime
 
+# Constant
 FORMAT_DATE = "%Y-%m-%d"
 DATE_TODAY = str(datetime.today().strftime(FORMAT_DATE))
-
 FILE_NAME_RAW_DATA_SET = "raw/air_bnb.csv"
 FILE_NAME_RESULT_CLUSTERING = "result/" + DATE_TODAY + "-airbnb-clustering-kmeans.csv"
 FILE_NAME_RESULT_CLASSIFICATION = "result/" + DATE_TODAY + "-airbnb-classificaction-knn.csv"
+BORDER_LINE = "-----------------------------------------------------------------------"
+IDENTITY_NAME = "Muhammad Faisal Amir"
+IDENTITY_NIM = "1301198497"
+IDENTITY_CLASS = "IFX-43-GAB"
+IDENTITY_MAJORS = "S1 Informatika 2019"
+IDENTITY_UNIVERSITY = "Telkom University"
+IDENTITY_DATASET = "AIR BNB"
+
 
 # Title column table dataset
 COLUMN_ID = "id"

@@ -19,7 +19,7 @@ from com.frogobox.base.config import *
 
 from com.frogobox.base.config import FILE_NAME_RESULT_CLUSTERING
 from com.frogobox.algorithm.kmeans import Kmeans
-from com.frogobox.base.helper import get_value_type
+from com.frogobox.base.helper import get_value_type, print_border_line
 
 
 def create_result_clustering(column_label, kmeans):
@@ -38,14 +38,20 @@ def create_result_clustering(column_label, kmeans):
             label = classification + 1
             labels.append(COLUMN_CLASS + "_" + str(label))
 
-    data_frame = pd.DataFrame({column_label[0]: item_column_0,
-                               column_label[1]: item_column_1,
-                               column_label[2]: item_column_2,
-                               column_label[3]: item_column_3,
-                               COLUMN_CLASS: labels})
+    clustering_data_frame = pd.DataFrame({column_label[0]: item_column_0,
+                                          column_label[1]: item_column_1,
+                                          column_label[2]: item_column_2,
+                                          column_label[3]: item_column_3,
+                                          COLUMN_CLASS: labels})
 
-    # Create clustering result csv
-    data_frame.to_csv(FILE_NAME_RESULT_CLUSTERING, index=False)
+    print_border_line()
+    print("Result Clustering : " + FILE_NAME_RESULT_CLUSTERING)
+    print_border_line()
+    print(clustering_data_frame)
+    print()
+
+    # Create clustering result cs
+    clustering_data_frame.to_csv(FILE_NAME_RESULT_CLUSTERING, index=False)
 
 
 def clustering(path_file_raw_dataset, column_label):

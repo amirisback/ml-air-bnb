@@ -14,9 +14,15 @@
 # FrogoBox Software Industries
 # 
 # /
+from com.frogobox.base.config import *
+
 
 def get_value_type(value):
     if type(value) is str:
         return str.encode(value)
     else:
         return value
+
+
+def print_border_line():
+    print(BORDER_LINE)

@@ -17,8 +17,17 @@
 
 from sklearn.metrics import classification_report, confusion_matrix
 
+from com.frogobox.base.helper import print_border_line
+
 
 def evaluation(y_test, y_prediction):
     # evaluasi
+    print_border_line()
+    print("Result Confusion Matrix : ")
+    print_border_line()
     print(confusion_matrix(y_test, y_prediction))
+    print()
+    print_border_line()
+    print("Result Classification Report :")
+    print_border_line()
     print(classification_report(y_test, y_prediction))

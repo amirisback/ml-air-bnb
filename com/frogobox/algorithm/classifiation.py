@@ -22,7 +22,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from com.frogobox.algorithm.evaluation import evaluation
 from com.frogobox.base.config import *
-from com.frogobox.base.helper import get_value_type
+from com.frogobox.base.helper import get_value_type, print_border_line
 
 
 def create_result_classification(column_label, data_test, y_prediction):
@@ -37,13 +37,18 @@ def create_result_classification(column_label, data_test, y_prediction):
         item_column_2.append(get_value_type(column[2]))
         item_column_3.append(get_value_type(column[3]))
 
-    data_frame = pd.DataFrame({column_label[0]: item_column_0,
-                               column_label[1]: item_column_1,
-                               column_label[2]: item_column_2,
-                               column_label[3]: item_column_3,
-                               COLUMN_CLASS: y_prediction})
+    classification_data_frame = pd.DataFrame({column_label[0]: item_column_0,
+                                              column_label[1]: item_column_1,
+                                              column_label[2]: item_column_2,
+                                              column_label[3]: item_column_3,
+                                              COLUMN_CLASS: y_prediction})
 
-    data_frame.to_csv(FILE_NAME_RESULT_CLASSIFICATION, index=False)
+    print_border_line()
+    print("Result Classification : " + FILE_NAME_RESULT_CLASSIFICATION)
+    print_border_line()
+    print(classification_data_frame)
+    print()
+    classification_data_frame.to_csv(FILE_NAME_RESULT_CLASSIFICATION, index=False)
 
 
 def classification(path_data_result_clustering, column_label):
