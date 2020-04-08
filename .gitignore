@@ -1,4 +1,4 @@
 .idea/misc.xml
 *.iml
 
-result/clustering-kmeans.csv
+/com/frogobox/result/*.csv
