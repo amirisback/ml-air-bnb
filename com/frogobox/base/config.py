@@ -17,3 +17,4 @@
 
 FILE_NAME_RAW_DATA_SET = "raw/fifa20.csv"
 FILE_NAME_RESULT_CLUSTERING = "result/clustering-kmeans.csv"
+FILE_NAME_RESULT_CLASSIFICATION = "result/classificaction-knn.csv"
