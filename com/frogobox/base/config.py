@@ -3,7 +3,7 @@
 # FrogoBox Inc License
 # -----------------------------------------
 # Mini-ML-Air-BnB
-# Copyright (C) 07/04/2020.      
+# Copyright (C) 08/04/2020.      
 # All rights reserved
 # -----------------------------------------
 # Name     : Muhammad Faisal Amir
@@ -14,5 +14,6 @@
 # FrogoBox Software Industries
 # 
 # /
- 
- 
+
+FILE_NAME_RAW_DATA_SET = "raw/fifa20.csv"
+FILE_NAME_RESULT_CLUSTERING = "result/clustering-kmeans.csv"

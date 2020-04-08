@@ -12,10 +12,9 @@ Clasification and Clustering
 - Clasification and clustering for machine learning in python, using Air BnB dataset
 
 # Tools
-- Python (SDK) - https://www.python.org/downloads/
-- PyCharm JetBrain Community (IDE) - https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC
-- Git (Windows) - https://git-scm.com/download/win 
-- Scratch (Windows) - https://downloads.scratch.mit.edu/desktop/Scratch%20Desktop%20Setup%203.9.0.exe
+- Python (SDK) - [Click Here!](https://www.python.org/downloads/)
+- PyCharm JetBrain Community (IDE) - [Click Here!](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC)
+- Git (Windows) - [Click Here!](https://git-scm.com/download/win) 
 
 # TODO
 - Terdapat 3 buah dataset, setiap mahasiswa  diberikan 1 buah  dataset sesuai table di bagian akhir deskripsi ini.  Mahasiswa dibebaskan untuk memilih feature dan label yang akan digunakan.  

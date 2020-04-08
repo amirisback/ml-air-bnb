@@ -16,58 +16,118 @@
 # /
 
 
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt, mpld3
+from com.frogobox.base.config import *
+from matplotlib import style
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
 
-data = pd.read_csv("raw/air_bnb.csv", delimiter=',')
+style.use('ggplot')
 
-# --- Menghilangkan Kolom Yang Tidak Perlu ---
-# simpleData = data.drop([id,name,host_id,host_name,neighbourhood_group,neighbourhood,latitude,longitude,room_type,price,minimum_nights,number_of_reviews,last_review,reviews_per_month,calculated_host_listings_count,availability_365])
-data = data.drop(
-    ["host_id", "host_name", "neighbourhood_group", "neighbourhood", "latitude", "longitude",
-     "minimum_nights", "number_of_reviews", "last_review", "reviews_per_month", "calculated_host_listings_count",
-     "availability_365"], axis=1)
-data.head()
-print(data)
 
-# -- Menentukan variabel yang akan di klusterkan ---
-data_x = data.iloc[:, 1:3]
-data_x.head()
-print(data_x)
+class K_Means:
+    def __init__(self, k=3, tolerance=0.0001, max_iterations=500):
+        self.k = k
+        self.tolerance = tolerance
+        self.max_iterations = max_iterations
 
-# --- Memvisualkan persebaran simpleData ---
-plt.scatter(data.name, data.room_type, 10, "c", "o", 1)
-plt.show()
+    def fit(self, data):
 
-# --- Mengubah Variabel simpleData Frame Menjadi Array ---
-x_array = np.array(data_x)
-print(x_array)
+        self.centroids = {}
 
-# --- Menstandarkan Ukuran Variabel ---
-scaler = MinMaxScaler()
-x_scaled = scaler.fit_transform(x_array)
-x_scaled
+        # inisialasi centroid
+        for i in range(self.k):
+            self.centroids[i] = data[i]
 
-# --- Menentukan dan mengkonfigurasi fungsi kmeans ---
-kmeans = KMeans(n_clusters=3, random_state=123)
-# --- Menentukan kluster dari data ---
-kmeans.fit(x_scaled)
+        # Mulai Iterasi
+        for i in range(self.max_iterations):
+            self.classes = {}
+            for i in range(self.k):
+                self.classes[i] = []
 
-# --- Menampilkan pusat cluster ---
-print(kmeans.cluster_centers_)
+            # find the distance between the point and cluster; choose the nearest centroid
+            for features in data:
+                distances = [np.linalg.norm(features - self.centroids[centroid]) for centroid in self.centroids]
+                klasifikasi = distances.index(min(distances))
+                self.classes[klasifikasi].append(features)
 
-# --- Menampilkan Hasil Kluster ---
-print(kmeans.labels_)
-# --- Menambahkan Kolom "kluster" Dalam Data Frame Driver ---
-data["kluster"] = kmeans.labels_
+            previous = dict(self.centroids)
 
-# --- Memvisualkan hasil kluster ---
-output = plt.scatter(x_scaled[:, 0], x_scaled[:, 1], s=100, c=data.kluster, marker="o", alpha=1, )
-centers = kmeans.cluster_centers_
-plt.scatter(centers[:, 0], centers[:, 1], c='red', s=200, alpha=1, marker="s")
-plt.title("Hasil Klustering K-Means")
-plt.colorbar(output)
-plt.show()
+            # rata-rata datapoints cluster untuk menghitung ulang centroid
+            for klasifikasi in self.classes:
+                self.centroids[klasifikasi] = np.average(self.classes[klasifikasi], axis=0)
+
+            isOptimal = True
+
+            for centroid in self.centroids:
+
+                original_centroid = previous[centroid]
+                curr = self.centroids[centroid]
+
+                if np.sum((curr - original_centroid) / original_centroid * 100.0) > self.tolerance:
+                    isOptimal = False
+
+            # Hentikan looping jika tida terjadi perubuhan centroid
+            if isOptimal:
+                break
+
+    def pred(self, data):
+        distances = [np.linalg.norm(data - self.centroids[centroid]) for centroid in self.centroids]
+        klasifikasi = distances.index(min(distances))
+        return klasifikasi
+
+
+def main():
+    df = pd.read_csv('raw/fifa20.csv')
+    df = df[['wage_eur', 'value_eur']]
+    dataset = df.astype(float).values.tolist()
+
+    X = df.values  # kemablikan numpy array
+
+    km = K_Means(3)
+    km.fit(X)
+
+    wage_eurs = []
+    value_eurs = []
+    labels = []
+    for klasifikasi in km.classes:
+        for features in km.classes[klasifikasi]:
+            wage_eurs.append(features[0])
+            value_eurs.append(features[1])
+            label = klasifikasi + 1
+            labels.append("Class " + str(label))
+            print(features)
+            print(klasifikasi)
+    df = pd.DataFrame({"wage_eur": wage_eurs, "value_eur": value_eurs, "Class": labels})
+    df.to_csv(FILE_NAME_RESULT_CLUSTERING, index=False)
+
+    filename = FILE_NAME_RESULT_CLUSTERING
+    dataset = pd.read_csv(filename)
+    # bagi data set kedalam nilai dan label
+    X = dataset.iloc[:, :-1].values
+    y = dataset.iloc[:, 2].values
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+
+    # Feature Scaling
+    scaler = StandardScaler()
+    scaler.fit(X_train)
+    X_train = scaler.transform(X_train)
+    X_test = scaler.transform(X_test)
+
+    # Melatih dan Prekdiksi
+    classifier = KNeighborsClassifier(n_neighbors=5)
+    classifier.fit(X_train, y_train)
+    y_pred = classifier.predict(X_test)
+
+    # evaluasi
+    print(confusion_matrix(y_test, y_pred))
+    print(classification_report(y_test, y_pred))
+
+
+if __name__ == "__main__":
+    main()
