@@ -21,8 +21,9 @@ from com.frogobox.base.config import *
 
 
 def main():
-    clustering(FILE_NAME_RAW_DATA_SET)
-    classification(FILE_NAME_RESULT_CLUSTERING)
+    parameter_column = [COLUMN_PRICE, COLUMN_MINIMUM_NIGHTS, COLUMN_NUMBER_OF_REVIEWS, COLUMN_AVAILABILITY_365]
+    clustering(FILE_NAME_RAW_DATA_SET, parameter_column)
+    classification(FILE_NAME_RESULT_CLUSTERING, parameter_column)
 
 
 if __name__ == "__main__":

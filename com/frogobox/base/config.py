@@ -21,7 +21,6 @@ FILE_NAME_RESULT_CLUSTERING = "result/clustering-kmeans.csv"
 FILE_NAME_RESULT_CLASSIFICATION = "result/classificaction-knn.csv"
 
 # Title column table dataset
-
 COLUMN_ID = "id"
 COLUMN_NAME = "name"
 COLUMN_HOST_ID = "host_id"
