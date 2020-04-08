@@ -24,8 +24,8 @@ from com.frogobox.algorithm.evaluation import evaluation
 from com.frogobox.base.config import *
 
 
-def classification():
-    dataset = pd.read_csv(FILE_NAME_RESULT_CLUSTERING)
+def classification(path_data_result_clustering):
+    dataset = pd.read_csv(path_data_result_clustering)
     # bagi data set kedalam nilai dan label
     x_dataset = dataset.iloc[:, :-1].values
     y_dataset = dataset.iloc[:, 4].values

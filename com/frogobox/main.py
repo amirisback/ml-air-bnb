@@ -17,11 +17,12 @@
 
 from com.frogobox.algorithm.classifiation import classification
 from com.frogobox.algorithm.clustering import clustering
+from com.frogobox.base.config import *
 
 
 def main():
-    clustering()
-    classification()
+    clustering(FILE_NAME_RAW_DATA_SET)
+    classification(FILE_NAME_RESULT_CLUSTERING)
 
 
 if __name__ == "__main__":

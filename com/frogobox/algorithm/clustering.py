@@ -17,12 +17,12 @@
 import pandas as pd
 from com.frogobox.base.config import *
 
-from com.frogobox.base.config import FILE_NAME_RAW_DATA_SET, FILE_NAME_RESULT_CLUSTERING
+from com.frogobox.base.config import FILE_NAME_RESULT_CLUSTERING
 from com.frogobox.algorithm.kmeans import Kmeans
 
 
-def clustering():
-    fetch_raw_data = pd.read_csv(FILE_NAME_RAW_DATA_SET)
+def clustering(path_file_raw_dataset):
+    fetch_raw_data = pd.read_csv(path_file_raw_dataset)
     sorted_raw_data = fetch_raw_data[
         [DATA_SET_PRICE, DATA_SET_MINIMUM_NIGHTS, DATA_SET_NUMBER_OF_REVIEWS, DATA_SET_AVAILABILITY_365]]
     numpy_array = sorted_raw_data.values  # kembalikan numpy array
