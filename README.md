@@ -13,11 +13,11 @@ Clasification and Clustering
 
 # Result - Screen Shot App
 ## Result run program in console
-![ScreenShoot Apps](docs/image/ss1.png?raw=true)
-![ScreenShoot Apps](docs/image/ss2.png?raw=true)
-![ScreenShoot Apps](docs/image/ss3.png?raw=true)
-![ScreenShoot Apps](docs/image/ss4.png?raw=true)
-![ScreenShoot Apps](docs/image/ss5.png?raw=true)
+![ScreenShoot Apps](docs/image/ss1.PNG?raw=true)
+![ScreenShoot Apps](docs/image/ss2.PNG?raw=true)
+![ScreenShoot Apps](docs/image/ss3.PNG?raw=true)
+![ScreenShoot Apps](docs/image/ss4.PNG?raw=true)
+![ScreenShoot Apps](docs/image/ss5.PNG?raw=true)
 
 ## Result csv
 Auto generate with name file (Column already specified):
