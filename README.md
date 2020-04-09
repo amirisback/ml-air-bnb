@@ -12,6 +12,11 @@ Clasification and Clustering
 - Clasification and clustering for machine learning in python, using Air BnB dataset
 
 # Result - Screen Shot App
+Terdiri dari 3 jenis hasil
+- Run program in console
+- Csv
+- Report
+
 ## Result run program in console
 ![ScreenShoot Apps](docs/image/ss1.PNG?raw=true)
 ![ScreenShoot Apps](docs/image/ss2.PNG?raw=true)
