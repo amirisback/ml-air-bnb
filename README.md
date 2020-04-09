@@ -11,6 +11,28 @@ Clasification and Clustering
 # About This Project
 - Clasification and clustering for machine learning in python, using Air BnB dataset
 
+# Result - Screen Shot App
+## Result run program in console
+![ScreenShoot Apps](docs/image/ss1.png?raw=true)
+![ScreenShoot Apps](docs/image/ss2.png?raw=true)
+![ScreenShoot Apps](docs/image/ss3.png?raw=true)
+![ScreenShoot Apps](docs/image/ss4.png?raw=true)
+![ScreenShoot Apps](docs/image/ss5.png?raw=true)
+
+## Result csv
+Auto generate with name file (Column already specified):
+- Location : com.frogobox.result (Run the program first)
+- Clustering - [DateToday]-airbnb-clustering-kmeans.csv
+- Classification - [DateToday]-airbnb-classification-knn.csv
+
+Auto generate with name file (Column random):
+- Location : com.frogobox.result (Run the program first)
+- Clustering - [DateToday]-airbnb-clustering-kmeans-random.csv
+- Classification - [DateToday]-airbnb-classification-knn-random.csv
+
+## Result report
+- Link report - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/docs/report.docx
+
 # Tools
 - Python (SDK) - [Click Here!](https://www.python.org/downloads/)
 - PyCharm JetBrain Community (IDE) - [Click Here!](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC)
@@ -36,11 +58,8 @@ Untuk setiap task, mahasiswa diharapkan setidaknya melakukan hal- hal berikut :
 - Kode-kode yang siap dieksekusi (.py/.ipynb) 
 - Dataset hasil eksplorasi 
 
-# Result - Screen Shot App
-
 # Documentation
 - Link task - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/task_ml.pdf
-- Link report - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/docs/report.docx
 - Link dataset (Air BnB) -  https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/task/air_bnb.csv
 
 # Colaborator
