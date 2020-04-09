@@ -29,12 +29,24 @@ def identity():
     print("University \t: " + IDENTITY_UNIVERSITY)
     print_border_line()
     print("Dataset : " + IDENTITY_DATASET)
+    print("Date : " + DATE_TODAY)
 
 
 def logic_random():
     print_border_line()
     print(" --      Column random       -- ")
-    random_index = [random_number(), random_number(), random_number(), random_number()]
+
+    # prepare a list
+    random_index = []
+    # seed random number generator
+    random.seed(2)
+    simple_list = [i for i in range(10)]
+    random.shuffle(simple_list)
+    # make choices from the given list
+    for x in range(4):
+        random_index.append(simple_list[x])
+
+    # random_index = [random_number(), random_number(), random_number(), random_number()]
     random_index.sort()
     # parameter_column = [COLUMN_PRICE, COLUMN_MINIMUM_NIGHTS, COLUMN_NUMBER_OF_REVIEWS, COLUMN_AVAILABILITY_365]
     parameter_column = [
