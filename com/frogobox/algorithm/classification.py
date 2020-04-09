@@ -53,13 +53,12 @@ def create_result_classification(column_label, data_test, y_prediction, save_pat
 
 def classification(path_data_result_clustering, column_label, save_path_file):
     dataset = pd.read_csv(path_data_result_clustering)
-    # Labeling data dalam beberapa set
+
     x_dataset = dataset.iloc[:, :-1].values
-    y_dataset = dataset.iloc[:, 4].values
+    y_dataset = dataset.iloc[:, len(column_label)].values
 
     x_training, x_test, y_training, y_test = train_test_split(x_dataset, y_dataset, test_size=0.30)
 
-    # Feature Scaling
     scaler = StandardScaler()
     scaler.fit(x_training)
 
@@ -67,7 +66,6 @@ def classification(path_data_result_clustering, column_label, save_path_file):
     temp_test = x_test
     x_test = scaler.transform(x_test)
 
-    # Melatih dan Prekdiksi
     classifier = KNeighborsClassifier(n_neighbors=2)
     classifier.fit(x_training, y_training)
     y_prediction = classifier.predict(x_test)

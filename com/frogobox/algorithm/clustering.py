@@ -19,7 +19,6 @@ from pandas import DataFrame
 
 from com.frogobox.base.config import *
 
-from com.frogobox.base.config import FILE_NAME_RESULT_CLUSTERING
 from com.frogobox.algorithm.kmeans import Kmeans
 from com.frogobox.base.helper import cast_to_int, print_border_line
 
@@ -52,7 +51,7 @@ def create_result_clustering(column_label, kmeans, save_path_file):
     print(clustering_data_frame)
     print()
 
-    # Create clustering result cs
+    # Create clustering result csv
     clustering_data_frame.to_csv(save_path_file, index=False)
 
 

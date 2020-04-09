@@ -34,6 +34,10 @@ IDENTITY_MAJORS = "S1 Informatika 2019"
 IDENTITY_UNIVERSITY = "Telkom University"
 IDENTITY_DATASET = "AIR BNB"
 
+KMEANS_K = 3
+KMEANS_TOLERANCE = 0.0001
+KMEANS_MAX_ITERARIONS = 500
+
 # Title column table dataset
 COLUMN_ID = "id"  # int
 COLUMN_NAME = "name"  # str
