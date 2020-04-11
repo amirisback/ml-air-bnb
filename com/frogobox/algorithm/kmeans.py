@@ -18,7 +18,6 @@
 import numpy as np
 
 from com.frogobox.base.config import *
-from com.frogobox.base.helper import cast_to_int
 
 np.seterr(divide='ignore', invalid='ignore')
 
@@ -32,15 +31,6 @@ class Kmeans:
     def fit(self, data):
 
         self.centroids = {}
-
-        # cast_data = [[]]
-        # cast_data_child = []
-        # for i in range(len(data)):
-        #     child_data = data[i]
-        #     for j in range(len(child_data)):
-        #         casting = cast_to_int(child_data[j])
-        #         cast_data_child.append(casting)
-        #     cast_data.append(cast_data_child)
 
         # Initiation Centroid
         for i in range(self.k):

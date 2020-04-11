@@ -18,11 +18,10 @@ Terdiri dari 3 jenis hasil
 - Report
 
 ## Result run program in console
-![ScreenShoot Apps](docs/image/ss1.PNG?raw=true)
-![ScreenShoot Apps](docs/image/ss2.PNG?raw=true)
-![ScreenShoot Apps](docs/image/ss3.PNG?raw=true)
-![ScreenShoot Apps](docs/image/ss4.PNG?raw=true)
-![ScreenShoot Apps](docs/image/ss5.PNG?raw=true)
+![ScreenShoot Apps](docs/image/ss_1.jpg?raw=true)
+![ScreenShoot Apps](docs/image/ss_2.jpg?raw=true)
+![ScreenShoot Apps](docs/image/ss_3.jpg?raw=true)
+![ScreenShoot Apps](docs/image/ss_4.jpg?raw=true)
 
 ## Result csv
 Auto generate with name file (Column already specified):
@@ -34,6 +33,9 @@ Auto generate with name file (Column random):
 - Location : com.frogobox.result (Run the program first)
 - Clustering - [DateToday]-airbnb-clustering-kmeans-random.csv
 - Classification - [DateToday]-airbnb-classification-knn-random.csv
+
+## Result image clustering
+![ScreenShoot Apps](docs/image/result-cluster.png?raw=true)
 
 ## Result report
 - Link report - https://github.com/amirisback/Mini-ML-Air-BnB/blob/master/docs/report.docx

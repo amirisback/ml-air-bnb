@@ -32,51 +32,18 @@ def identity():
     print("Date : " + DATE_TODAY)
 
 
-def logic_random():
-    print_border_line()
-    print(" --      Column random       -- ")
-
-    # prepare a list
-    random_index = []
-    # seed random number generator
-    random.seed(2)
-    simple_list = [i for i in range(10)]
-    random.shuffle(simple_list)
-    # make choices from the given list
-    for x in range(4):
-        random_index.append(simple_list[x])
-
-    # random_index = [random_number(), random_number(), random_number(), random_number()]
-    random_index.sort()
-    # parameter_column = [COLUMN_PRICE, COLUMN_MINIMUM_NIGHTS, COLUMN_NUMBER_OF_REVIEWS, COLUMN_AVAILABILITY_365]
-    parameter_column = [
-        LIST_INT_COLUMN[random_index[0]],
-        LIST_INT_COLUMN[random_index[1]],
-        LIST_INT_COLUMN[random_index[2]],
-        LIST_INT_COLUMN[random_index[3]]
-    ]
-    print_border_line()
-    print(random_index)
-    print(parameter_column)
-
-    clustering(FILE_NAME_RAW_DATA_SET, parameter_column, FILE_NAME_RESULT_CLUSTERING_RANDOM)
-    classification(FILE_NAME_RESULT_CLUSTERING_RANDOM, parameter_column, FILE_NAME_RESULT_CLASSIFICATION_RANDOM)
-
-
 def logic():
     print_border_line()
     print(" -- Column already specified -- ")
-    parameter_column = [COLUMN_PRICE, COLUMN_MINIMUM_NIGHTS, COLUMN_NUMBER_OF_REVIEWS, COLUMN_AVAILABILITY_365]
     print_border_line()
-    print(parameter_column)
-    clustering(FILE_NAME_RAW_DATA_SET, parameter_column, FILE_NAME_RESULT_CLUSTERING)
-    classification(FILE_NAME_RESULT_CLUSTERING, parameter_column, FILE_NAME_RESULT_CLASSIFICATION)
+    print(DATA_SET_LABEL)
+    clustering(FILE_NAME_RAW_DATA_SET, DATA_SET_LABEL, FILE_NAME_RESULT_CLUSTERING)
+    classification(FILE_NAME_RESULT_CLUSTERING, DATA_SET_LABEL, FILE_NAME_RESULT_CLASSIFICATION)
 
 
 def main():
     identity()
     logic()
-    logic_random()
 
 
 if __name__ == "__main__":
