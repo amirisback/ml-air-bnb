@@ -11,6 +11,9 @@ Clasification and Clustering
 # About This Project
 - Clasification and clustering for machine learning in python, using Air BnB dataset
 
+# Structure This Project
+![ScreenShoot Apps](docs/image/ss_stucture.PNG?raw=true)
+
 # Result - Screen Shot App
 Terdiri dari 3 jenis hasil
 - Run program in console
@@ -24,11 +27,11 @@ Terdiri dari 3 jenis hasil
 ![ScreenShoot Apps](docs/image/ss_4.jpg?raw=true)
 
 ## Result csv
+![ScreenShoot Apps](docs/image/ss_generated_file.PNG?raw=true)
 Auto generate with name file (Column already specified):
 - Location : com.frogobox.result (Run the program first)
 - Clustering - [DateToday]-airbnb-clustering-kmeans.csv
 - Classification - [DateToday]-airbnb-classification-knn.csv
-
 Auto generate with name file (Column random):
 - Location : com.frogobox.result (Run the program first)
 - Clustering - [DateToday]-airbnb-clustering-kmeans-random.csv
