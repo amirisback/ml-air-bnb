@@ -28,6 +28,7 @@ Terdiri dari 3 jenis hasil
 
 ## Result csv
 ![ScreenShoot Apps](docs/image/ss_generated_file.PNG?raw=true)
+
 Auto generate with name file (Column already specified):
 - Location : com.frogobox.result (Run the program first)
 - Clustering - [DateToday]-airbnb-clustering-kmeans.csv
