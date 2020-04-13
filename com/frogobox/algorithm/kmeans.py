@@ -61,7 +61,7 @@ class Kmeans:
                 original_centroid = previous[centroid]
                 curr = self.centroids[centroid]
 
-                if np.sum((curr - original_centroid) / original_centroid * 100.0) > self.tolerance:
+                if np.sum((curr - original_centroid) / original_centroid * CENTROID_PERCENTAGE) > self.tolerance:
                     isOptimal = False
 
             # Stop looping if there is no centroid change

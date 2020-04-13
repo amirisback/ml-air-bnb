@@ -25,36 +25,39 @@ from com.frogobox.base.helper import cast_to_int, print_border_line
 style.use('ggplot')
 
 
-def create_result_clustering(column_label, kmeans, save_path_file):
-    item_column_0 = []
-    item_column_1 = []
-    item_column_2 = []
-    item_column_3 = []
+def clustering_print(data_frame, save_path_file):
+    print_border_line()
+    print("Result Clustering : " + save_path_file)
+    print_border_line()
+    print(data_frame)
+    print()
+
+
+def clustering_write_to_csv(data_frame, save_path_file):
+    data_frame.to_csv(save_path_file, index=False)
+
+
+def clustering_create_result(column_label, kmeans, save_path_file):
+    array_item_column = [[] for x in range(len(column_label))]
     result_label_cluster = []
 
     for classification in kmeans.classes:
         for column in kmeans.classes[classification]:
-            item_column_0.append(cast_to_int(column[0]))
-            item_column_1.append(cast_to_int(column[1]))
-            item_column_2.append(cast_to_int(column[2]))
-            item_column_3.append(cast_to_int(column[3]))
+            array_item_column[0].append(column[0])
+            array_item_column[1].append(column[1])
+            array_item_column[2].append(column[2])
+            array_item_column[3].append(column[3])
             label_cluster = classification + 1
             result_label_cluster.append(COLUMN_CLASS + "_" + str(label_cluster))
 
-    clustering_data_frame = pd.DataFrame({column_label[0]: item_column_0,
-                                          column_label[1]: item_column_1,
-                                          column_label[2]: item_column_2,
-                                          column_label[3]: item_column_3,
+    clustering_data_frame = pd.DataFrame({column_label[0]: array_item_column[0],
+                                          column_label[1]: array_item_column[1],
+                                          column_label[2]: array_item_column[2],
+                                          column_label[3]: array_item_column[3],
                                           COLUMN_CLASS: result_label_cluster})
 
-    print_border_line()
-    print("Result Clustering : " + save_path_file)
-    print_border_line()
-    print(clustering_data_frame)
-    print()
-
-    # Create clustering result csv
-    clustering_data_frame.to_csv(save_path_file, index=False)
+    clustering_print(clustering_data_frame, save_path_file)
+    clustering_write_to_csv(clustering_data_frame, save_path_file)
 
 
 def create_image_result_cluster(kmeans):
@@ -87,5 +90,5 @@ def clustering(path_file_raw_dataset, column_label, save_path_file):
     x = raw_data_set.values
     kmeans = Kmeans()
     kmeans.fit(x)
-    create_result_clustering(column_label, kmeans, save_path_file)
+    clustering_create_result(column_label, kmeans, save_path_file)
     # create_image_result_cluster(kmeans)

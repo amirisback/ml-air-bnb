@@ -25,30 +25,38 @@ from com.frogobox.base.config import *
 from com.frogobox.base.helper import cast_to_int, print_border_line
 
 
-def create_result_classification(column_label, data_test, y_prediction, save_path_file):
-    item_column_0 = []
-    item_column_1 = []
-    item_column_2 = []
-    item_column_3 = []
-
-    for column in data_test:
-        item_column_0.append(cast_to_int(column[0]))
-        item_column_1.append(cast_to_int(column[1]))
-        item_column_2.append(cast_to_int(column[2]))
-        item_column_3.append(cast_to_int(column[3]))
-
-    classification_data_frame = pd.DataFrame({column_label[0]: item_column_0,
-                                              column_label[1]: item_column_1,
-                                              column_label[2]: item_column_2,
-                                              column_label[3]: item_column_3,
-                                              COLUMN_CLASS: y_prediction})
-
+# Output hasil di console
+def classification_print(data_frame, save_path_file):
     print_border_line()
     print("Result Classification : " + save_path_file)
     print_border_line()
-    print(classification_data_frame)
+    print(data_frame)
     print()
-    classification_data_frame.to_csv(save_path_file, index=False)
+
+
+# Generate csv files classification
+def classification_write_to_csv(data_frame, save_path_file):
+    data_frame.to_csv(save_path_file, index=False)
+
+
+#
+def classification_create_result(column_label, data_test, y_prediction, save_path_file):
+    array_item_column = [[] for x in range(len(column_label))]
+
+    for column in data_test:
+        array_item_column[0].append(cast_to_int(column[0]))
+        array_item_column[1].append(cast_to_int(column[1]))
+        array_item_column[2].append(cast_to_int(column[2]))
+        array_item_column[3].append(cast_to_int(column[3]))
+
+    classification_data_frame = pd.DataFrame({column_label[0]: array_item_column[0],
+                                              column_label[1]: array_item_column[1],
+                                              column_label[2]: array_item_column[2],
+                                              column_label[3]: array_item_column[3],
+                                              COLUMN_CLASS: y_prediction})
+
+    classification_print(classification_data_frame, save_path_file)
+    classification_write_to_csv(classification_data_frame, save_path_file)
 
 
 def classification(path_data_result_clustering, column_label, save_path_file):
@@ -70,6 +78,6 @@ def classification(path_data_result_clustering, column_label, save_path_file):
     classifier.fit(x_training, y_training)
     y_prediction = classifier.predict(x_test)
 
-    create_result_classification(column_label, temp_test, y_prediction, save_path_file)
+    classification_create_result(column_label, temp_test, y_prediction, save_path_file)
 
     evaluation(y_test, y_prediction)
