@@ -36,9 +36,9 @@ def logic():
     print_border_line()
     print(" -- Column already specified -- ")
     print_border_line()
-    print(DATA_SET_LABEL)
-    clustering(FILE_NAME_RAW_DATA_SET, DATA_SET_LABEL, FILE_NAME_RESULT_CLUSTERING)
-    classification(FILE_NAME_RESULT_CLUSTERING, DATA_SET_LABEL, FILE_NAME_RESULT_CLASSIFICATION)
+    print(DATA_SET_FEATURES)
+    clustering(FILE_NAME_RAW_DATA_SET, DATA_SET_FEATURES, FILE_NAME_RESULT_CLUSTERING)
+    classification(FILE_NAME_RESULT_CLUSTERING, DATA_SET_FEATURES, FILE_NAME_RESULT_CLASSIFICATION)
 
 
 def main():
